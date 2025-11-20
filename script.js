@@ -86,3 +86,68 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('Portfolio loaded successfully!');
 });
+
+// Recommendation Form Handling
+const recommendationForm = document.getElementById('recommendation-form');
+if (recommendationForm) {
+    recommendationForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('recommender-name').value;
+        const title = document.getElementById('recommender-title').value;
+        const organization = document.getElementById('recommender-org').value;
+        const recommendation = document.getElementById('recommendation-text').value;
+        
+        // Create new recommendation card
+        const newRecommendation = document.createElement('div');
+        newRecommendation.className = 'recommendation-card';
+        newRecommendation.innerHTML = `
+            <div class="recommendation-header">
+                <h3>${name}</h3>
+                <p class="recommender-title">${title}</p>
+                <p class="recommender-org">${organization}</p>
+            </div>
+            <p class="recommendation-text">"${recommendation}"</p>
+        `;
+        
+        // Add to recommendations list
+        const recommendationsList = document.getElementById('recommendations-list');
+        recommendationsList.appendChild(newRecommendation);
+        
+        // Reset form
+        recommendationForm.reset();
+        
+        // Show popup
+        showPopup();
+    });
+}
+
+// Popup Functions
+function showPopup() {
+    const popup = document.getElementById('popup-modal');
+    if (popup) {
+        popup.style.display = 'flex';
+    }
+}
+
+function closePopup() {
+    const popup = document.getElementById('popup-modal');
+    if (popup) {
+        popup.style.display = 'none';
+    }
+}
+
+// Close popup when clicking outside
+window.addEventListener('click', function(event) {
+    const popup = document.getElementById('popup-modal');
+    if (event.target === popup) {
+        closePopup();
+    }
+});
+
+// Close popup with X button
+const closeBtn = document.querySelector('.popup-close');
+if (closeBtn) {
+    closeBtn.addEventListener('click', closePopup);
+}
