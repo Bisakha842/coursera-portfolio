@@ -32,6 +32,89 @@
         </div>
     </section>
 
+        <!-- Recommendations Section -->
+    <section id="recommendations" class="recommendations-section">
+        <div class="container">
+            <h2 class="section-title">Recommendations</h2>
+            <p class="section-subtitle">What people say about working with me</p>
+            
+            <!-- Existing Recommendations -->
+            <div id="recommendations-list" class="recommendations-grid">
+                <div class="recommendation-card">
+                    <div class="recommendation-header">
+                        <h3>Dr. Rajesh Kumar</h3>
+                        <p class="recommender-title">Professor, Computer Science</p>
+                        <p class="recommender-org">KIIT University</p>
+                    </div>
+                    <p class="recommendation-text">
+                        "Bisakha demonstrated exceptional skills in full-stack development and AI integration. Their dedication to learning and ability to deliver quality projects is truly commendable."
+                    </p>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="recommendation-header">
+                        <h3>Priya Sharma</h3>
+                        <p class="recommender-title">Hackathon Mentor</p>
+                        <p class="recommender-org">AI and the City Hackathon</p>
+                    </div>
+                    <p class="recommendation-text">
+                        "Working with Bisakha on the AI-CRM project showcased their strong problem-solving abilities and collaborative spirit. A talented developer with great potential."
+                    </p>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="recommendation-header">
+                        <h3>Amit Patel</h3>
+                        <p class="recommender-title">Course Instructor</p>
+                        <p class="recommender-org">IBM Coursera</p>
+                    </div>
+                    <p class="recommendation-text">
+                        "Bisakha's enthusiasm for web development and rapid learning ability makes them stand out. Their project submissions consistently demonstrate technical excellence."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Add Recommendation Form -->
+            <div class="recommendation-form-container">
+                <h3 class="form-title">Leave a Recommendation</h3>
+                <form id="recommendation-form" class="recommendation-form">
+                    <div class="form-group">
+                        <label for="recommender-name">Your Name *</label>
+                        <input type="text" id="recommender-name" name="name" required placeholder="Enter your name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="recommender-title">Your Title *</label>
+                        <input type="text" id="recommender-title" name="title" required placeholder="e.g., Software Engineer">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="recommender-org">Organization *</label>
+                        <input type="text" id="recommender-org" name="organization" required placeholder="Company or Institution">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="recommendation-text">Recommendation *</label>
+                        <textarea id="recommendation-text" name="recommendation" required rows="4" placeholder="Write your recommendation here..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Submit Recommendation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popup Modal -->
+    <div id="popup-modal" class="popup-modal">
+        <div class="popup-content">
+            <span class="popup-close">&times;</span>
+            <div class="popup-icon">✓</div>
+            <h3>Thank you for submitting a recommendation!</h3>
+            <p>Your recommendation has been successfully added.</p>
+            <button class="btn btn-primary" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
